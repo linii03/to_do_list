@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device">
+        <title>To-Do List App</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app"> 
+            <div class ="header">
+                <h1>My tasks</h1>
+                <span class="count" id="count">0 remaining</span>
+            </div>
+
+            <div class ="input-row">
+                <input type="text" id="task-input" placeholder="Add a new task"/>
+                <select id="priority-select">
+                    <option value="none">No priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Loww</option>
+                </select>
+                <button class="add-btn" onclick="addTask()">Add</button>
+            </div>
+
+            <div class="filter-btn">
+                <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+                <button class="filter-btn" onclick="setFilter('active',this)">Active</button>
+                <button class="filter-btn" onclick="setFilter('done',this)">Done</button>
+                <button class="filter-btn" onclick="setFilter('high',this)">High priority</button>
+            </div> 
+
+            <div class="task-list" id="task-list"></div>
+
+            <div class="footer">
+                <span id="footer-count"></span>
+                <button class="clear-btn" onclick="clearDone()">Clear completed</button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
